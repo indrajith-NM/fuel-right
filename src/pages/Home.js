@@ -216,9 +216,9 @@ export function Home() {
           backgroundColor: 'white',
           justifyContent: 'space-around',
           shadowColor: '#000',
-          shadowOffset: { width: 1, height: 10 },
+          shadowOffset: { width: 1, height: 5 },
           shadowOpacity:  0.5,
-          shadowRadius: 3,
+          shadowRadius: 5,
           elevation: 10,
           height:90
         }}
