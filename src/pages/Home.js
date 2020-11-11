@@ -217,7 +217,7 @@ export function Home() {
           justifyContent: 'space-around',
           shadowColor: '#000',
           shadowOffset: { width: 1, height: 5 },
-          shadowOpacity:  0.5,
+          shadowOpacity:  0.09,
           shadowRadius: 5,
           elevation: 10,
           height:90
@@ -293,7 +293,7 @@ export function Home() {
         onChangeText={(value) => setUnit(value)}
       />
       <Text style={{fontSize:15,marginBottom:5,color:'#4c4c4c'}}>Total Volume to be Treated</Text>
-      <View style={{flexDirection:"row"}}>
+      <View style={{flexDirection:"row",width:'100%'}}>
       <TextInput
           value={volume}
           onChangeText={(count) => validateVolume(count)}
@@ -303,6 +303,7 @@ export function Home() {
           style={styles.volumeInput}
         />
         <Button
+          containerStyle={styles.btnContainer}
           buttonStyle={styles.btnCalculate}
           title="Calculate"
           onPress={()=>calculate()}
@@ -386,7 +387,7 @@ const styles = StyleSheet.create({
     },
 
     volumeInput:{
-      width: '67%',
+      width: '70%',
       height: 44,
       padding: 10,
       borderWidth: 1,
@@ -404,8 +405,14 @@ const styles = StyleSheet.create({
       elevation: 5,
     },
 
+    btnContainer:{
+      width:'30%',
+      // elevation: 5,s
+      // marginBottom: 15,
+    },
+
     btnCalculate:{
-      width: '70%',
+      // width: '66%',
       height: 44,
       padding: 10,
       borderWidth: 0,
@@ -444,6 +451,7 @@ const styles = StyleSheet.create({
     leftCard:{
       width:'49%',
       margin:6,
+      marginRight:'1%',
       // borderColor: '#56C596',
       // backgroundColor:'#009a00',
       backgroundColor:'#fff',
