@@ -24,20 +24,26 @@ export function Home() {
     // const [value, onChangeText] = React.useState('Useless Placeholder');
 
     function calculate() {
+      // console.log(typeof rBulk.substring(2))
+      // console.log(rShock)
+      let bulkRatio=parseFloat(rBulk.substring(2).replace(/,/g, ''));
+      let shockRatio=parseFloat(rShock.substring(2).replace(/,/g, ''));
+      console.log(bulkRatio)
+      console.log(shockRatio)
         switch (unit) {
           case 'Liters':
             console.log(parseFloat(volume))
-            setBulk((parseFloat(volume)/10000).toFixed(2))
-            setShock((parseFloat(volume)/4000).toFixed(2))
-            setBulk2((parseFloat(volume)/10).toFixed(2))
-            setShock2((parseFloat(volume)/4).toFixed(2))
+            setBulk((parseFloat(volume)/bulkRatio).toFixed(2))
+            setShock((parseFloat(volume)/shockRatio).toFixed(2))
+            setBulk2((parseFloat(volume)/(bulkRatio/1000)).toFixed(2))
+            setShock2((parseFloat(volume)/(shockRatio/1000)).toFixed(2))
             setUnit1('Litres')
             setUnit2('Millilitres')
             break;
           case 'Metric Tonnes':
             console.log(parseFloat(volume))
-            setBulk((parseFloat(volume)/20).toFixed(2))
-            setShock((parseFloat(volume)/12).toFixed(2))
+            setBulk((parseFloat(volume)/bulkRatio).toFixed(2))
+            setShock((parseFloat(volume)/shockRatio).toFixed(2))
             setBulk2('')
             setShock2('')
             setUnit1('Litres')
@@ -47,10 +53,10 @@ export function Home() {
             console.log(parseFloat(volume))
             let inLitters=parseFloat(volume)*3.78;
             // let gln=
-            setBulk(((inLitters/10000)/3.78).toFixed(2))
-            setShock(((inLitters/4000)/3.78).toFixed(2))
-            setBulk2((((inLitters/10000)/3.78)*128).toFixed(2))
-            setShock2((((inLitters/4000)/3.78)*128).toFixed(2))
+            setBulk(((inLitters/bulkRatio)/3.78).toFixed(2))
+            setShock(((inLitters/shockRatio)/3.78).toFixed(2))
+            setBulk2((((inLitters/(bulkRatio/1000))/3.78)*128).toFixed(2))
+            setShock2((((inLitters/(shockRatio/1000))/3.78)*128).toFixed(2))
             setUnit1('Gallons')
             setUnit2('fluid ounces')
             break;
@@ -106,7 +112,7 @@ export function Home() {
           let products=[{
             value: 'ProActive',
           }, {
-            value: '2.8K',
+            value: '2.8K Winterizing Addictive',
           }, {
             value: '15K with anti-freeze',
           },{
@@ -114,8 +120,8 @@ export function Home() {
           }
         ];
         setProducts(products)
-        setPType(products[0].value)
-        getRBulk(products[0].value)
+        // setPType(products[0].value)
+        // getRBulk(products[0].value)
           break;
         case 'Unleaded Fuel':
         case 'MGO/MDO':
@@ -128,8 +134,8 @@ export function Home() {
           }
         ];
         setProducts(products)
-        setPType(products[0].value)
-        getRBulk(products[0].value)
+        // setPType(products[0].value)
+        // getRBulk(products[0].value)
           break;
         case 'Low Sulfur Fuel Oil (180/380)':
           case 'IFO 180 Bunker':
@@ -141,8 +147,8 @@ export function Home() {
           }
         ];
         setProducts(products)
-        setPType(products[0].value)
-        getRBulk(products[0].value)
+        // setPType(products[0].value)
+        // getRBulk(products[0].value)
           break;
       
         default:
@@ -158,7 +164,7 @@ export function Home() {
               setRBulk('1:10,000')
               setRShock('1:4,000')
             break;
-        case '2.8K':
+        case '2.8K Winterizing Addictive':
               setRBulk('1:2,800')
               setRShock('1:2,800')
             break;
