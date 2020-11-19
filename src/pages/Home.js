@@ -42,8 +42,9 @@ export function Home() {
             break;
           case 'Metric Tonnes':
             console.log(parseFloat(volume))
-            setBulk((parseFloat(volume)/bulkRatio).toFixed(2))
-            setShock((parseFloat(volume)/shockRatio).toFixed(2))
+            let inLitter=parseFloat(volume)*1000;
+            setBulk((parseFloat(inLitter)/bulkRatio).toFixed(2))
+            setShock((parseFloat(inLitter)/shockRatio).toFixed(2))
             setBulk2('')
             setShock2('')
             setUnit1('Litres')
@@ -55,8 +56,8 @@ export function Home() {
             // let gln=
             setBulk(((inLitters/bulkRatio)/3.78).toFixed(2))
             setShock(((inLitters/shockRatio)/3.78).toFixed(2))
-            setBulk2((((inLitters/(bulkRatio/1000))/3.78)*128).toFixed(2))
-            setShock2((((inLitters/(shockRatio/1000))/3.78)*128).toFixed(2))
+            setBulk2((((inLitters/(bulkRatio))/3.78)*128).toFixed(2))
+            setShock2((((inLitters/(shockRatio))/3.78)*128).toFixed(2))
             setUnit1('Gallons')
             setUnit2('fluid ounces')
             break;
