@@ -113,7 +113,7 @@ export function Home() {
           let products=[{
             value: 'ProActive',
           }, {
-            value: '2.8K Winterizing Addictive',
+            value: '2.8K Winterizing Additive',
           }, {
             value: '15K with anti-freeze',
           },{
@@ -165,7 +165,7 @@ export function Home() {
               setRBulk('1:10,000')
               setRShock('1:4,000')
             break;
-        case '2.8K Winterizing Addictive':
+        case '2.8K Winterizing Additive':
               setRBulk('1:2,800')
               setRShock('1:2,800')
             break;
